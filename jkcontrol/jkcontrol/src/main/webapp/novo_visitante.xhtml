@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+	<ui:composition template="/template.xhtml">
+		<ui:define name="conteudo">
+			<h:form enctype="multipart/form-data">
+		    	<p:card style="width: 25em; margin: 1em auto">
+					<div class="ui-fluid">
+					    <div class="p-field">
+							<label for="nome">Nome</label>
+							<p:inputText id="nome" type="text" value="#{usuarioBean.usuario.nome}" required="true" requiredMessage="Nome é obrigatório" />
+						</div>
+					    <div class="p-field">
+							<label for="nasc">Nascimento</label>
+							<p:datePicker id="nasc" value="#{usuarioBean.usuario.nasc}" />
+						</div>
+						<div class="p-field">
+							<label for="cpf">CPF</label>
+							<p:inputText id="cpf" value="#{usuarioBean.usuario.cpf}" required="true" requiredMessage="Cpf é obrigatório" />
+						</div>
+						<div class="p-field">
+							<label for="rg">RG</label>
+							<p:inputText id="rg" value="#{usuarioBean.usuario.rg}" required="true" requiredMessage="Rg é obrigatório" />
+						</div>
+						<div class="p-field">
+							<label for="d">Dígito</label>
+							<p:inputText id="d" value="#{usuarioBean.usuario.digito}" required="true" requiredMessage="Dígito é obrigatório" />
+						</div>
+						<div class="p-field">
+							<label for="image">Imagem</label>
+							<p:fileUpload allowTypes=".jpg" mode="simple" id="image" skinSimple="true" value="#{usuarioBean.imagem}" />
+						</div>
+					</div>
+					<f:facet name="footer">
+						<p:commandButton value="Salvar" action="#{usuarioBean.salvar()}" />
+					</f:facet>
+				</p:card>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html> 
